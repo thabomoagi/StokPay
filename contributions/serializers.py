@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from .models import Member, Contribution
+from .models import Member, Contribution, Stokvel, Payout
+
+
+class StokvelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stokvel
+        fields = '__all__'
 
 
 class MemberSerializer(serializers.ModelSerializer):
@@ -10,4 +16,11 @@ class MemberSerializer(serializers.ModelSerializer):
 
 class ContributionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Contributionfields = '__all__'
+        model = Contribution
+        fields = '__all__'
+
+
+class PayoutSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payout
+        fields = '__all__'
